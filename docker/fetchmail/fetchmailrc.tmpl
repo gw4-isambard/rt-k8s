@@ -1,0 +1,9 @@
+set no syslog
+set logfile /data/log/fetchmail.log
+
+set postmaster "fetchmail"
+
+poll outlook.office365.com with proto POP3
+  auth password
+  user ${O365_USER} 
+  pass ${O365_PASS} ssl
