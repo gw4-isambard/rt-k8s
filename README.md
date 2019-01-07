@@ -20,6 +20,17 @@ kubectl cluster-info
 
 ## Deploy in Oracle Compute Infrastructure
 
-```bash
+Use the web interface, Dashboard -> Developer Services -> Container Clusters
+(OKE). Click on Create Cluster, fill in the form with a name, choose Kebernetes
+v1.11.5, choose Quick Create, a shape of `VM.Standard1.1` is sufficeint, use
+one per subnet)
+
+After the cluster is created, in the cluster main page click on "Access Kubeconfig". Follow the instructions.
+
+One this is done you should be able to use kubectl to manage the cluster
 
 ```
+kubectl cluster-info
+```
+
+## Kubernetes 
