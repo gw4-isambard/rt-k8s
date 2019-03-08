@@ -31,193 +31,98 @@ RUN yum -y update \
             "Development Tools" \
             "Web Server"
 
-RUN cpanm --notest Business::Hours
+RUN cpanm --notest Business::Hours Mail::Sendmail \
   && cpanm \
-        Net::IP \
-        Encode Crypt::Eksblowfish \
-        Module::Versions::Report \
-        List::MoreUtils DBI \
-        Devel::StackTrace \
-        Text::Password::Pronounceable \
-        Devel::GlobalDestruction \
-        Time::ParseDate \
-        IPC::Run3 \
-        Tree::Simple \
-        HTML::Scrubber \
-        HTML::Quoted \
-        Data::Page::Pageset \
-        Sys::Syslog \
-        Mail::Mailer \
-        Data::GUID \
-        HTML::Mason \
-        Symbol::Global::Name \
-        DateTime::Format::Natural \
-        Plack Text::Wrapper \
-        Regexp::Common::net::CIDR \
-        Log::Dispatch \
-        HTML::FormatText::WithLinks::AndTables
-        DateTime \
-        CGI::Emulate::PSGI \
-        Text::Quoted \
-        Regexp::IPv6 \
-        CGI \
-        Class::Accessor::Fast \
-        CSS::Squish \
-        DateTime::Locale \
-        CGI::PSGI \
-        Apache::Session \
-        Date::Extract \
-        HTML::Mason::PSGIHandler \
-        MIME::Entity \
-        Locale::Maketext::Lexicon \
-        Role::Basic \
-        Module::Refresh \
-        Date::Manip \
-        HTML::RewriteAttributes \
-        Text::Template \
-        CGI::Cookie \
-        XML::RSS \
-        Text::WikiFormat \
-        DBIx::SearchBuilder \
-        Regexp::Common \
-        File::ShareDir \
-        CSS::Minifier::XS \
-        Data::ICal \
-        Pod::Select \
-        HTML::FormatText::WithLinks \
-        Scope::Upper \
-        Mail::Header \
-        Locale::Maketext::Fuzzy \
-        MIME::Types \
-        Email::Address::List Convert::Color \
-        JavaScript::Minifier::XS \
-        Clone \
-        Net::CIDR \
-        JSON \
-        UNIVERSAL::require \
-        Email::Address \
-        Plack::Handler::Starlet \
-        Test::Email \
-        Email::Abstract \
-        Test::Deep \
-        Set::Tiny \
-        String::ShellQuote \
-        Test::MockTime \
-        File::Which \
-        Test::WWW::Mechanize::PSGI \
-        Locale::PO \
-        Test::Expect \
-        Test::Warn \
-        Plack::Middleware::Test::StashWarnings \
-        Log::Dispatch::Perl \
-        Test::NoWarnings \
-        Test::Builder \
-        Test::LongString \
-        WWW::Mechanize \
-        XML::Simple \
-        Test::Pod \
-        Mojo::DOM \
-        Test::WWW::Mechanize \
-        FCGI \
-        GD::Text \
-        GD \
-        GD::Graph \
-        IPC::Run \
-        GraphViz \
-        LWP::Protocol::https \
-        DBD::Pg \
-        DBIx::SearchBuilder \
-        LWP::Protocol::https \
-        IPC::Run \
-        GraphViz \
-        Plack::Middleware::Test::StashWarnings \
-        Log::Dispatch::Perl \
-        Test::MockTime \
-        XML::Simple \
-        File::Which \
-        Test::NoWarnings \
-        Test::Pod Test::Email \
-        Test::Builder \
-        Email::Abstract \
-        Mojo::DOM \
-        Test::WWW::Mechanize::PSGI \
-        Locale::PO \
-        Test::Deep \
-        Set::Tiny \
-        Test::LongString \
-        WWW::Mechanize Test::Expect \
-        String::ShellQuote \
-        Test::Warn \
-        Test::WWW::Mechanize \
-        DBD::Pg \
-        DBIx::SearchBuilder \
-        GD::Graph GD::Text \
-        GD Net::IP Business::Hours Encode \
-        Crypt::Eksblowfish \
-        Module::Versions::Report \
-        List::MoreUtils \
-        DBI \
-        Devel::StackTrace \
-        Text::Password::Pronounceable \
-        Devel::GlobalDestruction \
-        Time::ParseDate \
-        IPC::Run3 \
-        Tree::Simple \
-        HTML::Scrubber \
-        HTML::Quoted \
-        Data::Page::Pageset \
-        Sys::Syslog Mail::Mailer \
-        Data::GUID \
-        HTML::Mason \
-        Symbol::Global::Name \
-        DateTime::Format::Natural \
-        Plack \
-        Text::Wrapper \
-        Regexp::Common::net::CIDR \
-        Log::Dispatch \
-        HTML::FormatText::WithLinks::AndTables \
-        DateTime \
-        CGI::Emulate::PSGI \
-        Text::Quoted Regexp::IPv6 \
-        CGI \
-        Class::Accessor::Fast \
-        CSS::Squish \
-        DateTime::Locale \
-        CGI::PSGI \
-        Apache::Session \
-        Date::Extract \
-        HTML::Mason::PSGIHandler \
-        MIME::Entity \
-        Locale::Maketext::Lexicon \
-        Role::Basic \
-        Module::Refresh \
-        Date::Manip \
-        HTML::RewriteAttributes \
-        Text::Template \
-        CGI::Cookie \
-        XML::RSS \
-        Text::WikiFormat \
-        DBIx::SearchBuilder \
-        Regexp::Common \
-        File::ShareDir \
-        CSS::Minifier::XS \
-        Data::ICal \
-        Pod::Select \
-        HTML::FormatText::WithLinks \
-        Scope::Upper \
-        Mail::Header \
-        Locale::Maketext::Fuzzy MIME::Types \
-        Email::Address::List \
-        Convert::Color \
-        JavaScript::Minifier::XS \
-        Clone \
-        Net::CIDR \
-        JSON \
-        UNIVERSAL::require \
-        Email::Address \
-        Plack::Handler::Starlet \
-        FCGI
-        
+    Apache::Session \
+    Business::Hours \
+    CGI \
+    CGI::Cookie \
+    CGI::Emulate::PSGI \
+    CGI::PSGI \
+    CSS::Minifier::XS \
+    CSS::Squish \
+    Class::Accessor::Fast \
+    Clone \
+    Convert::Color \
+    Crypt::Eksblowfish \
+    DBD::Pg \
+    DBI \
+    DBIx::SearchBuilder \
+    Data::GUID \
+    Data::ICal \
+    Data::Page::Pageset \
+    Date::Extract \
+    Date::Manip \
+    DateTime \
+    DateTime::Format::Natural \
+    DateTime::Locale \
+    Devel::GlobalDestruction \
+    Devel::StackTrace \
+    Email::Abstract \
+    Email::Address \
+    Email::Address::List \
+    Encode \
+    FCGI \
+    File::ShareDir \
+    GD \
+    GD::Graph \
+    GD::Text \
+    GraphViz \
+    HTML::FormatText::WithLinks \
+    HTML::FormatText::WithLinks::AndTables \
+    HTML::Mason \
+    HTML::Mason::PSGIHandler \
+    HTML::Quoted \
+    HTML::RewriteAttributes \
+    HTML::Scrubber \
+    IPC::Run3 \
+    JSON \
+    JavaScript::Minifier::XS \
+    LWP::Protocol::https \
+    List::MoreUtils \
+    Locale::Maketext::Fuzzy \
+    Locale::Maketext::Lexicon \
+    Locale::PO \
+    Log::Dispatch \
+    Log::Dispatch::Perl \
+    MIME::Entity \
+    MIME::Types \
+    Mail::Header \
+    Mail::Mailer \
+    Module::Refresh \
+    Module::Versions::Report \
+    Mojo::DOM \
+    Net::CIDR \
+    Net::IP \
+    Plack \
+    Plack::Handler::Starlet \
+    Plack::Middleware::Test::StashWarnings \
+    Pod::Select \
+    Regexp::Common \
+    Regexp::Common::net::CIDR \
+    Regexp::IPv6 \
+    Role::Basic \
+    Scope::Upper \
+    Set::Tiny \
+    String::ShellQuote \
+    Symbol::Global::Name \
+    Sys::Syslog \
+    Test::Email \
+    Test::Expect \
+    Test::WWW::Mechanize \
+    Test::WWW::Mechanize::PSGI \
+    Text::Password::Pronounceable \
+    Text::Quoted \
+    Text::Template \
+    Text::WikiFormat \
+    Text::Wrapper \
+    Time::ParseDate \
+    Tree::Simple \
+    UNIVERSAL::require \
+    WWW::Mechanize \
+    XML::RSS \
+    XML::Simple
+
 RUN cd /usr/local/src \
   && curl -sSL "https://download.bestpractical.com/pub/rt/release/rt-${RT_VERSION}.tar.gz" -o rt.tar.gz \
   && echo "${RT_SHA}  rt.tar.gz" | sha256sum -c \
@@ -230,10 +135,9 @@ RUN cd /usr/local/src \
     --enable-developer \
     --enable-gd \
     --enable-graphviz \
-    --with-db-type=Pg
+    --with-db-type=Pg \
+   && make install
 
-
-#   && make install \
 #   && make initdb \
 #   && rm -rf /usr/local/src/*
 # 
