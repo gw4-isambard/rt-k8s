@@ -142,8 +142,8 @@ RUN cd /usr/local/src \
 COPY apache.rt.conf /etc/httpd/conf.d/rt.conf
 COPY RT_SiteConfig.pm /opt/rt4/etc/RT_SiteConfig.pm
 
-# VOLUME /opt/rt4
-# 
+VOLUME /opt/rt4
+
 # EXPOSE 80
 # # CMD ["/usr/sbin/apache2","-DFOREGROUND"]
 CMD ["/bin/bash"]
