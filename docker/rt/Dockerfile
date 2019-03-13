@@ -136,10 +136,9 @@ RUN cd /usr/local/src \
     --enable-gd \
     --enable-graphviz \
     --with-db-type=Pg \
-   && make install
+   && make install \
+   && rm -rf /usr/local/src/*
 
-#   && make initdb \
-#   && rm -rf /usr/local/src/*
 # 
 # COPY apache.rt.conf /etc/apache2/sites-available/rt.conf
 # RUN a2dissite 000-default.conf && a2ensite rt.conf
