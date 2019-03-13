@@ -146,7 +146,4 @@ VOLUME /opt/rt4
 
 EXPOSE 80
 
-# # CMD ["/usr/sbin/apache2","-DFOREGROUND"]
-CMD ["/bin/bash"]
-
-
+CMD ["/usr/sbin/httpd","-DFOREGROUND"]
