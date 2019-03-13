@@ -144,7 +144,8 @@ COPY RT_SiteConfig.pm /opt/rt4/etc/RT_SiteConfig.pm
 
 VOLUME /opt/rt4
 
-# EXPOSE 80
+EXPOSE 80
+
 # # CMD ["/usr/sbin/apache2","-DFOREGROUND"]
 CMD ["/bin/bash"]
 
