@@ -140,10 +140,11 @@ RUN cd /usr/local/src \
    && rm -rf /usr/local/src/*
 
 COPY apache.rt.conf /etc/httpd/conf.d/rt.conf
-COPY RT_SiteConfig.pm /opt/rt4/etc/RT_SiteConfig.pm
+COPY RT_SiteConfig.pm.in /opt/rt4/etc/RT_SiteConfig.pm.in
+COPY run.sh /run.sh
 
 VOLUME /opt/rt4
 
 EXPOSE 80
 
-CMD ["/usr/sbin/httpd","-DFOREGROUND"]
+CMD ["/run.sh"]
