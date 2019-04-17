@@ -5,7 +5,7 @@ set postmaster "fetchmail"
 
 set daemon 300
 
-poll outlook.office365.com with proto POP3
+poll outlook.office365.com with proto IMAP
   auth password
   user ${O365_USER}
   pass ${O365_PASS} ssl
