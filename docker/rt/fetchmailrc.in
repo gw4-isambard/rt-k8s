@@ -3,7 +3,7 @@ set logfile /var/log/fetchmail.log
 
 set postmaster "fetchmail"
 
-set daemon 300
+set daemon 120
 
 poll outlook.office365.com with proto IMAP
   auth password

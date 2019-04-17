@@ -3,7 +3,8 @@ use utf8;
 Set($rtname, "isambard-support");
 Set($WebDomain, "${SERVICE_ADDRESS}");
 Set($WebPort, 8080);
-Set($MailCommand, "testfile");
+Set($MailCommand, "sendmail");
+Set($SendmailArguments, "-oi -ODeliveryMode=b -OErrorMode=m");
 Set($DatabasePassword, "${DATABASE_PASSWORD}");
 
 1;

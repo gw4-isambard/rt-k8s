@@ -10,6 +10,7 @@ ENV RT_SHA 738ab43cac902420b3525459e288515d51130d85810659f6c8a7e223c77dadb1
 
 RUN yum -y update \
   && yum clean all \
+  && yum -y install epel-release \
   && yum -y install \
             perl \
             perl-CPAN \
@@ -28,6 +29,9 @@ RUN yum -y update \
             postgresql \
             postgresql-devel \
             fetchmail \
+            postfix \
+            cyrus-sasl-plain \
+            syslog-ng \
   && yum -y groupinstall \
             "Development Tools" \
             "Web Server"
@@ -140,9 +144,12 @@ RUN cd /usr/local/src \
    && make install \
    && rm -rf /usr/local/src/*
 
+RUN sed -i 's/system();/unix-stream("\/dev\/log");/' /etc/syslog-ng/syslog-ng.conf
+
 COPY apache.rt.conf /etc/httpd/conf.d/rt.conf
 COPY RT_SiteConfig.pm.in /opt/rt4/etc/RT_SiteConfig.pm.in
 COPY fetchmailrc.in /etc/fetchmailrc.in
+COPY postfix-config.sh /etc/postfix-config.sh
 COPY run.sh /run.sh
 
 VOLUME /opt/rt4
