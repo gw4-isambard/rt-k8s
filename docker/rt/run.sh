@@ -1,7 +1,7 @@
 #!/bin/sh
 
-envsubst '$DATABASE_PASSWORD' </opt/rt4/etc/RT_SiteConfig.pm.in >/opt/rt4/etc/RT_SiteConfig.pm
-envsubst '$O365_USER $O365_PASS' </etc/fetchmailrc.in >/etc/fetchmailrc
+envsubst '$DATABASE_PASSWORD $SERVICE_ADDRESS' </opt/rt4/etc/RT_SiteConfig.pm.in >/opt/rt4/etc/RT_SiteConfig.pm
+envsubst '$O365_USER $O365_PASS $SERVICE_ADDRESS' </etc/fetchmailrc.in >/etc/fetchmailrc
 
 # Launch fetchmail daemon
 touch /var/log/fetchmail.log

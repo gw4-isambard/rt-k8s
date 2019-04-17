@@ -1,7 +1,7 @@
 use utf8;
 
 Set($rtname, "isambard-support");
-Set($WebDomain, "129.213.213.26");
+Set($WebDomain, "${SERVICE_ADDRESS}");
 Set($WebPort, 8080);
 Set($MailCommand, "testfile");
 Set($DatabasePassword, "${DATABASE_PASSWORD}");
