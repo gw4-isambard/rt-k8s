@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rt-deploy
+spec:
+  selector:
+    matchLabels:
+      run: rt-pod
+  template:
+    metadata:
+      name: rt-pod
+      namespace: rt-dev
+      labels:
+        run: rt-pod
+    spec:
+      containers:
+      - name: postgres
+        image: orchardup/postgresql
+        env:
+          - name: POSTGRESQL_USER
+            value: rt_user
+          - name: POSTGRESQL_PASS
+            valueFrom:
+              secretKeyRef:
+                name: db-pass
+                key: password
+          - name: POSTGRESQL_DB
+            value: rt4
+          - name: SERVICE_ADDRESS
+            value: 129.213.186.5
+        command: ["/usr/local/bin/run"]
+      - name: rt-run
+        image: jrprice/rt-dev
+        env:
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-pass
+                key: password
+          - name: O365_USER
+            valueFrom:
+              secretKeyRef:
+                name: mail-user
+                key: username
+          - name: O365_PASS
+            valueFrom:
+              secretKeyRef:
+                name: mail-pass
+                key: password
+          - name: SERVICE_ADDRESS
+            value: 129.213.186.5
+        ports:
+          - containerPort: 80

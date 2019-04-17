@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rt-svc
+  namespace: rt-dev
+  labels:
+    run: rt-pod
+spec:
+  type: LoadBalancer
+  selector:
+    run: rt-pod
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80
+    name: http
