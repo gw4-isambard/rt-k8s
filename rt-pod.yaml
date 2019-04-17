@@ -29,6 +29,9 @@ spec:
           - name: SERVICE_ADDRESS
             value: 129.213.186.5
         command: ["/usr/local/bin/run"]
+        volumeMounts:
+            - name: postgres-persistent-storage
+              mountPath: /var/lib/postgresql/9.3
       - name: rt-run
         image: jrprice/rt-dev
         env:
@@ -51,3 +54,7 @@ spec:
             value: 129.213.186.5
         ports:
           - containerPort: 80
+      volumes:
+        - name: postgres-persistent-storage
+          persistentVolumeClaim:
+            claimName: postgresclaim
