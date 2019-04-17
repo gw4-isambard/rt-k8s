@@ -3,8 +3,12 @@ use utf8;
 Set($rtname, "isambard-support");
 Set($WebDomain, "${SERVICE_ADDRESS}");
 Set($WebPort, 8080);
-Set($MailCommand, "sendmail");
-Set($SendmailArguments, "-oi -ODeliveryMode=b -OErrorMode=m");
 Set($DatabasePassword, "${DATABASE_PASSWORD}");
+
+Set($MailCommand, "sendmailpipe");
+Set($SendmailArguments, "-t -oi -ODeliveryMode=b -OErrorMode=m");
+Set($CorrespondAddress, 'isambard-support@gw4.ac.uk');
+Set($CommentAddress, 'isambard-support@gw4.ac.uk');
+Set($SetOutgoingMailFrom, 1);
 
 1;
