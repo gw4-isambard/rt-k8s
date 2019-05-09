@@ -9,7 +9,6 @@ spec:
   template:
     metadata:
       name: rt-pod
-      namespace: rt-dev
       labels:
         run: rt-pod
     spec:
@@ -27,7 +26,7 @@ spec:
           - name: POSTGRESQL_DB
             value: rt4
           - name: SERVICE_ADDRESS
-            value: 129.213.186.5
+            value: 129.213.190.14
         command: ["/usr/local/bin/run"]
         volumeMounts:
             - name: postgres-persistent-storage
@@ -51,7 +50,7 @@ spec:
                 name: mail-pass
                 key: password
           - name: SERVICE_ADDRESS
-            value: 129.213.186.5
+            value: 129.213.190.14
         ports:
           - containerPort: 80
       volumes:

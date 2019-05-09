@@ -2,11 +2,10 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rt-svc
-  namespace: rt-dev
   labels:
     run: rt-pod
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     run: rt-pod
   ports:
