@@ -33,4 +33,54 @@ One this is done you should be able to use kubectl to manage the cluster
 kubectl cluster-info
 ```
 
-## Kubernetes 
+## Kubernetes
+
+Create a namespace:
+
+    kubectl create namespace rt
+
+Initialise/update helm:
+
+    helm init --upgrade
+
+Set up NGINX ingress:
+
+    helm install --namespace=rt stable/nginx-ingress
+
+    # Get external IP address (may take a few minutes)
+    kubectl get service --namespace=rt
+
+Start the service:
+
+    kubectl create --namespace=rt -f rt-svc.yaml
+    kubectl apply --namespace=rt -f rt-ingress.yaml
+
+Create the PVC:
+
+    kubectl create  --namespace=rt -f rt-pvc.yaml
+
+Create Kubernetes secrets:
+
+    kubectl create secret generic --namespace=rt mail-user --from-file=username=./mail-user.txt
+    kubectl create secret generic --namespace=rt mail-pass --from-file=password=./mail-pass.txt
+    kubectl create secret generic --namespace=rt db-pass --from-file=password=./db-pass.txt
+
+Start the deployment:
+
+    kubectl create --namespace=rt -f rt-pod.yaml
+
+Initialise the RT database:
+
+    # Get name of pod
+    POD=$(kubectl get pod --namespace=rt | grep rt-deploy | awk '{print $1}')
+
+    # Launch shell on pod directly
+    kubectl exec --namespace=rt -it $POD -c rt-run -- /bin/bash
+
+    # Run database initialisation command
+    /opt/rt4/sbin/rt-setup-database --action init --skip-create
+
+
+## RT config
+
+TODO
