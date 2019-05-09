@@ -41,9 +41,6 @@ You can then see the cluster with
 kubectl cluster-info
 ```
 
-In the web interface create a volume for bpostgres. Go to Block Storage -> 
-Block Volumes -> Create Block Volume. Call it `postgresclaim` 
-
 ## Kubernetes
 
 Create a namespace:
