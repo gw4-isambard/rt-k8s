@@ -89,6 +89,9 @@ Initialise the RT database:
     # Run database initialisation command
     /opt/rt4/sbin/rt-setup-database --action init --skip-create
 
+Setup LetsEncrypyt
+
+    helm install stable/kube-lego --namespace $NS --set config.LEGO_EMAIL=isambard-support,config.LEGO_URL=https://acme-v01.api.letsencrypt.org/directory,rbac.create=true
 
 ## RT config
 
