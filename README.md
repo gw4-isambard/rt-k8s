@@ -45,7 +45,8 @@ kubectl cluster-info
 
 Create a namespace:
 
-    kubectl create namespace rt
+    export NS=rt
+    kubectl create namespace $NS
 
 Initialise/update helm:
 
@@ -53,37 +54,37 @@ Initialise/update helm:
 
 Set up NGINX ingress:
 
-    helm install --namespace=rt stable/nginx-ingress
+    helm install --namespace=$NS stable/nginx-ingress
 
     # Get external IP address (may take a few minutes)
-    kubectl get service --namespace=rt
+    kubectl get service --namespace=$NS
 
 Start the service:
 
-    kubectl create --namespace=rt -f rt-svc.yaml
-    kubectl apply --namespace=rt -f rt-ingress.yaml
+    kubectl create --namespace=$NS -f rt-svc.yaml
+    kubectl apply --namespace=$NS -f rt-ingress.yaml
 
 Create the PVC:
 
-    kubectl create  --namespace=rt -f rt-pvc.yaml
+    kubectl create  --namespace=$NS -f rt-pvc.yaml
 
 Create Kubernetes secrets:
 
-    kubectl create secret generic --namespace=rt mail-user --from-file=username=./mail-user.txt
-    kubectl create secret generic --namespace=rt mail-pass --from-file=password=./mail-pass.txt
-    kubectl create secret generic --namespace=rt db-pass --from-file=password=./db-pass.txt
+    kubectl create secret generic --namespace=$NS mail-user --from-file=username=./mail-user.txt
+    kubectl create secret generic --namespace=$NS mail-pass --from-file=password=./mail-pass.txt
+    kubectl create secret generic --namespace=$NS db-pass --from-file=password=./db-pass.txt
 
 Start the deployment:
 
-    kubectl create --namespace=rt -f rt-pod.yaml
+    kubectl create --namespace=$NS -f rt-pod.yaml
 
 Initialise the RT database:
 
     # Get name of pod
-    POD=$(kubectl get pod --namespace=rt | grep rt-deploy | awk '{print $1}')
+    POD=$(kubectl get pod --namespace=$NS | grep rt-deploy | awk '{print $1}')
 
     # Launch shell on pod directly
-    kubectl exec --namespace=rt -it $POD -c rt-run -- /bin/bash
+    kubectl exec --namespace=$NS -it $POD -c rt-run -- /bin/bash
 
     # Run database initialisation command
     /opt/rt4/sbin/rt-setup-database --action init --skip-create
