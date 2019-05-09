@@ -29,9 +29,20 @@ After the cluster is created, in the cluster main page click on "Access Kubeconf
 
 One this is done you should be able to use kubectl to manage the cluster
 
+Get the `kubectl` credential file
+
+```
+oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaaae4dqzrrhbrtkzlfha3genbxgjqwmmtdmm3tomzsmc2tsojsmy2w --file $HOME/.kube/config --region us-ashburn-
+```
+
+You can then see the cluster with
+
 ```
 kubectl cluster-info
 ```
+
+In the web interface create a volume for bpostgres. Go to Block Storage -> 
+Block Volumes -> Create Block Volume. Call it `postgresclaim` 
 
 ## Kubernetes
 
