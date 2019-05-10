@@ -1,9 +1,12 @@
 use utf8;
 
 Set($rtname, "isambard-support");
+Set($Organization, "isambard-support");
 Set($WebDomain, "${SERVICE_ADDRESS}");
 Set($WebPort, 443);
 Set($DatabasePassword, "${DATABASE_PASSWORD}");
+Set($OwnerEmail, 'j.price@bristol.ac.uk');
+Set($Timezone, 'Europe/London');
 
 Set($MailCommand, "sendmailpipe");
 Set($SendmailArguments, "-t -oi -ODeliveryMode=b -OErrorMode=m");
