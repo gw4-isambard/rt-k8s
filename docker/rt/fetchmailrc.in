@@ -10,6 +10,6 @@ poll outlook.office365.com with proto IMAP
   user ${O365_USER}
   pass ${O365_PASS} ssl
   keep
-  mda "/opt/rt4/bin/rt-mailgate --url http://${SERVICE_ADDRESS}:8080/ --queue general"
+  mda "/opt/rt4/bin/rt-mailgate --url ${SERVICE_ADDRESS} --queue general"
 
 # TODO: handle comment action?
