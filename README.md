@@ -41,6 +41,16 @@ You can then see the cluster with
 kubectl cluster-info
 ```
 
+## Building the Docker image
+
+If using a different DockerHub repository or image name (set to `jrprice/isambard-rt` below), the `rt-pod.yaml` needs to be updated to point to it.
+
+    cd docker/rt
+    docker build -t isambard-rt .
+    docker tag isambard-rt jrprice/isambard-rt
+    docker push jrprice/isambard-rt
+
+
 ## Kubernetes
 
 Create a namespace:
