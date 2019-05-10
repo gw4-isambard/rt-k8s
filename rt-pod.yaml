@@ -25,8 +25,6 @@ spec:
                 key: password
           - name: POSTGRESQL_DB
             value: rt4
-          - name: SERVICE_ADDRESS
-            value: isambard-support.gw4.ac.uk
         command: ["/usr/local/bin/run"]
         volumeMounts:
             - name: postgres-persistent-storage
@@ -49,8 +47,6 @@ spec:
               secretKeyRef:
                 name: mail-pass
                 key: password
-          - name: SERVICE_ADDRESS
-            value: isambard-support.gw4.ac.uk
         ports:
           - containerPort: 80
       volumes:

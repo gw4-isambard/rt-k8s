@@ -2,7 +2,7 @@ use utf8;
 
 Set($rtname, "isambard-support");
 Set($Organization, "isambard-support");
-Set($WebDomain, "${SERVICE_ADDRESS}");
+Set($WebDomain, "isambard-support.gw4.ac.uk");
 Set($WebPort, 443);
 Set($DatabasePassword, "${DATABASE_PASSWORD}");
 Set($OwnerEmail, 'j.price@bristol.ac.uk');
