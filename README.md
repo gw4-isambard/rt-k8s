@@ -14,7 +14,7 @@ az aks create \
     --name IsambardServiceDesk
 az aks get-credentials \
     --resource-group IsambardServiceDeskResourceGroup \
-    --name IsambardServiceDesk 
+    --name IsambardServiceDesk
 kubectl cluster-info
 ```
 
@@ -113,6 +113,18 @@ To modify and redeploy the RT container, delete and recreate the deployment:
 To enable ticket creation via email, we need to grant the `Everyone` group permission to create and reply to tickets:
 - Admin -> Queues -> Select
 - Click on the `General` queue.
-- Click `Group Rights` (the `Everyone` group should be selected by default)
+- Click `Group Rights`, and select `Everyone` (on the left)
 - Check the `Create tickets` and `Reply to tickets` boxes
 - Click `Save Changes`
+
+To enable operators to do everything they need to do with with tickets:
+- Admin -> Queues -> Select
+- Click on the `General` queue.
+- Click `Group Rights` and select `Privileged` (on the left)
+- Check the *everything* in the `General Rights` and the `Rights for Staff` categories
+- Click `Save Changes`
+
+To create a new operator:
+- Admin -> Users -> Create
+- Fill in `Username`, `E-mail`, `Real Name`, and `Organisation` fields
+- Check the `Let this user be granted rights (Privileged)` box
