@@ -110,9 +110,9 @@ To modify and redeploy the RT container, delete and recreate the deployment:
 
 ## RT config
 
-To enable ticket creation via email, we need to grant the `Everyone` group permission to comment and create on tickets:
+To enable ticket creation via email, we need to grant the `Everyone` group permission to create and reply to tickets:
 - Admin -> Queues -> Select
 - Click on the `General` queue.
 - Click `Group Rights` (the `Everyone` group should be selected by default)
-- Check the `Comment on tickets` and `Create tickets` boxes
+- Check the `Create tickets` and `Reply to tickets` boxes
 - Click `Save Changes`
