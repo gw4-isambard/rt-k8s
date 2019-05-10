@@ -110,18 +110,18 @@ To modify and redeploy the RT container, delete and recreate the deployment:
 
 ## RT config
 
-To enable ticket creation via email, we need to grant the `Everyone` group permission to create and reply to tickets:
+To enable ticket creation via email:
 - Admin -> Queues -> Select
 - Click on the `General` queue.
 - Click `Group Rights`, and select `Everyone` (on the left)
 - Check the `Create tickets` and `Reply to tickets` boxes
 - Click `Save Changes`
 
-To enable operators to do everything they need to do with with tickets:
+To enable operators to do everything they need to do with tickets:
 - Admin -> Queues -> Select
 - Click on the `General` queue.
 - Click `Group Rights` and select `Privileged` (on the left)
-- Check the *everything* in the `General Rights` and the `Rights for Staff` categories
+- Check *everything* in the `General Rights` and the `Rights for Staff` categories
 - Click `Save Changes`
 
 To create a new operator:
