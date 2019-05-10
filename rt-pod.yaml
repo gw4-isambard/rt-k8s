@@ -32,7 +32,7 @@ spec:
             - name: postgres-persistent-storage
               mountPath: /var/lib/postgresql/9.3
       - name: rt-run
-        image: jrprice/rt-dev
+        image: jrprice/isambard-rt
         env:
           - name: DATABASE_PASSWORD
             valueFrom:
