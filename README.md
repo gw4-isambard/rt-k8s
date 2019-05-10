@@ -103,6 +103,11 @@ Setup LetsEncrypyt
 
     helm install stable/kube-lego --namespace $NS --set config.LEGO_EMAIL=isambard-support,config.LEGO_URL=https://acme-v01.api.letsencrypt.org/directory,rbac.create=true
 
+To modify and redeploy the RT container, delete and recreate the deployment:
+
+    kubectl delete deployment --namespace=$NS rt-deploy
+    kubectl create --namespace=$NS -f rt-pod.yaml
+
 ## RT config
 
 To enable ticket creation via email, we need to grant the `Everyone` group permission to comment and create on tickets:
