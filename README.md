@@ -105,4 +105,9 @@ Setup LetsEncrypyt
 
 ## RT config
 
-TODO
+To enable ticket creation via email, we need to grant the `Everyone` group permission to comment and create on tickets:
+- Admin -> Queues -> Select
+- Click on the `General` queue.
+- Click `Group Rights` (the `Everyone` group should be selected by default)
+- Check the `Comment on tickets` and `Create tickets` boxes
+- Click `Save Changes`
