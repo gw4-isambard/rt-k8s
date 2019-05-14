@@ -117,14 +117,21 @@ To enable ticket creation via email:
 - Check the `Create tickets` and `Reply to tickets` boxes
 - Click `Save Changes`
 
-To enable operators to do everything they need to do with tickets:
-- Admin -> Queues -> Select
-- Click on the `General` queue.
-- Click `Group Rights` and select `Privileged` (on the left)
+Create a group for operators:
+- Admin -> Groups -> Create
+- Name: "Operator", Description: "All RT operators"
+- Admin -> Global -> Group Rights
+- Entry `Operator` into the `ADD GROUP` field
+- Select `Operator` under `USER GROUPS`
 - Check *everything* in the `General Rights` and the `Rights for Staff` categories
+- Check `Modify queue watchers` and `Show Admin menu` in the `Rights for Administrators` category
 - Click `Save Changes`
 
 To create a new operator:
 - Admin -> Users -> Create
 - Fill in `Username`, `E-mail`, `Real Name`, and `Organisation` fields
 - Check the `Let this user be granted rights (Privileged)` box
+- Admin -> Groups -> Select
+- Select the `Operator` group
+- Click `Members`
+- `Add user: <enter username>`, click username when it comes up
