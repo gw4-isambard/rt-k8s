@@ -194,5 +194,5 @@ Subscribe to a queue:
 - Select the queue you wish to subscribe to
 - Click `Watchers`
 - Search for your username
-- In the drop down box that appears, select `Cc` next to your username
+- In the drop down box that appears, select `AdminCc` next to your username
 - Click `Save Changes`
