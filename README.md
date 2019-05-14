@@ -175,3 +175,19 @@ if($self->TicketObj->RequestorAddresses =~ /^.*?${domainKey}/) {
 }
 ```
   - Click `Save Changes`
+
+
+## Operator usage info
+
+Change your password:
+- Under `Logged in as <user>` at the top, click `Settings` -> `About me`
+- Under `Access control`, enter old password and new password
+- Click `Save Preferences`
+
+Subscribe to a queue:
+- Admin -> Queues -> Select
+- Select the queue you wish to subscribe to
+- Click `Watchers`
+- Search for your username
+- In the drop down box that appears, select `Cc` next to your username
+- Click `Save Changes`
