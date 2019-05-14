@@ -176,6 +176,11 @@ if($self->TicketObj->RequestorAddresses =~ /^.*?${domainKey}/) {
 ```
   - Click `Save Changes`
 
+Change the auto-reply template (or any other templates):
+- Admin -> Global -> Templates -> Select
+- Select the `Autoreply in HTML` template
+- Modify as necessary, then click `Save Changes`
+
 
 ## Operator usage info
 
