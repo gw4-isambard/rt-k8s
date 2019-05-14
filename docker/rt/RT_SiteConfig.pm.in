@@ -13,5 +13,8 @@ Set($SendmailArguments, "-t -oi -ODeliveryMode=b -OErrorMode=m");
 Set($CorrespondAddress, 'isambard-support@gw4.ac.uk');
 Set($CommentAddress, 'isambard-support@gw4.ac.uk');
 Set($SetOutgoingMailFrom, 1);
+Set($RecordOutgoingEmail, 0);
+
+Set($EnableReminders, 0);
 
 1;
