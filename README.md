@@ -135,3 +135,43 @@ To create a new operator:
 - Select the `Operator` group
 - Click `Members`
 - `Add user: <enter username>`, click username when it comes up
+
+Create institutional queues:
+- Admin -> Queues -> Create
+- Create the following queues
+  - Name: `bath`, Description: Tickets for University of Bath users
+  - Name: `bristol`, Description: Tickets for University of Bristol users
+  - Name: `cardiff`, Description: Tickets for Cardiff University users
+  - Name: `exeter`, Description: Tickets for University of Exeter users
+  - Name: `metoffice`, Description: Tickets for Met Office users
+- Admin -> Queues -> Select
+- Select the `general` queue
+- Click `Scrips` -> `Create`
+  - Description: Route new tickets by domain
+  - Condition: On Create
+  - Action: User Defined
+  - Template: Blank
+  - Stage: Normal
+  - Custom action preparation code: `return 1;`
+  - Custom action commit code:
+```
+# Domains we want to move
+my $domains = {};
+
+my %domain_map = (
+                   '\@bath\.ac\.uk'             => "bath",
+                   '\@bristol\.ac\.uk'          => "bristol",
+                   '\@cardiff\.ac\.uk'          => "cardiff",
+                   '\@exeter\.ac\.uk'          => "exeter",
+                   '\@metoffice\.gov\.uk'   => "metoffice",
+                );
+
+#Check each of our defined domains for a match
+foreach my $domainKey (keys %domain_map ){
+if($self->TicketObj->RequestorAddresses =~ /^.*?${domainKey}/) {
+    # Domain matches - move to the right queue
+    $self->TicketObj->SetQueue($domain_map{$domainKey});
+    }
+}
+```
+  - Click `Save Changes`
