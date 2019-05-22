@@ -131,6 +131,7 @@ To create a new operator:
 - Admin -> Users -> Create
 - Fill in `Username`, `E-mail`, `Real Name`, and `Organisation` fields
 - Check the `Let this user be granted rights (Privileged)` box
+- Click `Create`
 - Admin -> Groups -> Select
 - Select the `Operator` group
 - Click `Members`
