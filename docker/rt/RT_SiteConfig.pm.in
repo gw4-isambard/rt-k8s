@@ -5,7 +5,7 @@ Set($Organization, "isambard-support");
 Set($WebDomain, "isambard-support.gw4.ac.uk");
 Set($WebPort, 443);
 Set($DatabasePassword, "${DATABASE_PASSWORD}");
-Set($OwnerEmail, 'j.price@bristol.ac.uk');
+Set($OwnerEmail, 'chris.edsall@bristol.ac.uk');
 Set($Timezone, 'Europe/London');
 
 Set($MailCommand, "sendmailpipe");
