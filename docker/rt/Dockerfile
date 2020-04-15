@@ -15,6 +15,7 @@ RUN yum -y update \
             perl \
             perl-CPAN \
             perl-App-cpanminus \
+            perl-autodie \
             make \
             expat \
             gd \
