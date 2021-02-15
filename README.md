@@ -5,16 +5,44 @@
 In the portal https://portal.azure.com/ create a new Resource Group called
 ``IsambardServiceDeskResourceGroup``
 
+The UoB subscription doesn't allow us to use the managed `aks` so we use
+microk8s instead.
+
 run
 
 ```bash
+wget https://github.com/joeheaton.keys | tail -1 > sshkey.pub
 az login
-az aks create \
-    --resource-group IsambardServiceDeskResourceGroup \
-    --name IsambardServiceDesk
-az aks get-credentials \
-    --resource-group IsambardServiceDeskResourceGroup \
-    --name IsambardServiceDesk
+az account set --subscription "Isambard Project Subscription"
+export RG=TestIsambardServiceDeskResourceGroup
+az group create --name ${RG} \
+    --location ukwest
+az network public-ip create \
+    --resource-group ${RG} \
+    --location ukwest \
+    --name rt-test \
+    --allocation-method static
+az vm create --name rt-test \
+    --resource-group ${RG} \
+    --public-ip-address rt-test \
+    --image ubuntults \
+    --data-disk-sizes-gb 10 \
+    --size Standard_D2s_v3 \
+    --admin-username gw4admin \
+    --ssh-key-values sshkey.pub
+```
+
+Log in to the created VM
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo snap install --classic microk8s
+```
+
+From your workstation
+
+```
 kubectl cluster-info
 ```
 
