@@ -43,12 +43,12 @@ kubectl cluster-info
 
 ## Building the Docker image
 
-If using a different DockerHub repository or image name (set to `jrprice/isambard-rt` below), the `rt-pod.yaml` needs to be updated to point to it.
+If using a different DockerHub repository or image name (set to `gw4isambard/isambard-rt` below), the `rt-pod.yaml` needs to be updated to point to it.
 
     cd docker/rt
     docker build -t isambard-rt .
-    docker tag isambard-rt jrprice/isambard-rt
-    docker push jrprice/isambard-rt
+    docker tag isambard-rt gw4isambard/isambard-rt
+    docker push gw4isambard/isambard-rt
 
 
 ## Kubernetes
