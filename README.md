@@ -38,7 +38,10 @@ Log in to the created VM
 sudo apt update
 sudo apt upgrade
 sudo snap install --classic microk8s
+microk8s enable ingress storage
 ```
+
+Check for the 10G data disk using `lsblk`, then format it using `mkfs.ext4 /dev/sda` and mount to `/data/` by running `mkdir /data; mount /dev/sda /data`.
 
 From your workstation
 
