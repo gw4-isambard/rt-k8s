@@ -37,8 +37,12 @@ RUN yum -y update \
             "Development Tools" \
             "Web Server"
 
-RUN cpanm --notest Business::Hours Mail::Sendmail \
-  && cpanm \
+RUN cpanm --notest \
+    Business::Hours \
+    Mail::Sendmail \
+    LWP::Protocol::https
+
+RUN cpanm \
     Apache::Session \
     Business::Hours \
     CGI \
@@ -84,7 +88,6 @@ RUN cpanm --notest Business::Hours Mail::Sendmail \
     IPC::Run3 \
     JSON \
     JavaScript::Minifier::XS \
-    LWP::Protocol::https \
     List::MoreUtils \
     Locale::Maketext::Fuzzy \
     Locale::Maketext::Lexicon \
