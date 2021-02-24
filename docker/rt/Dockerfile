@@ -3,7 +3,7 @@
 
 FROM centos:7
 
-LABEL maintainer="Chris Edsall <chris.edsall@bristol.ac.uk>"
+LABEL maintainer="Joe Heaton <joe.heaton@bristol.ac.uk>"
 
 ENV RT_VERSION 4.4.3
 ENV RT_SHA 738ab43cac902420b3525459e288515d51130d85810659f6c8a7e223c77dadb1
