@@ -5,8 +5,8 @@ FROM centos:7
 
 LABEL maintainer="Joe Heaton <joe.heaton@bristol.ac.uk>"
 
-ENV RT_VERSION 4.4.3
-ENV RT_SHA 738ab43cac902420b3525459e288515d51130d85810659f6c8a7e223c77dadb1
+ARG TEST_IMAGE
+ENV TEST_IMAGE=$TEST_IMAGE
 
 RUN yum -y update \
   && yum clean all \

@@ -6,9 +6,12 @@ envsubst '$O365_USER $O365_PASS' </etc/fetchmailrc.in >/etc/fetchmailrc
 # Launch syslog-ng
 /usr/sbin/syslog-ng --no-caps
 
-# Launch postfix daemon
-bash /etc/postfix-config.sh
-/usr/sbin/postfix start &
+# No mail for the test instance
+if [ ! "$TEST_IMAGE" ]; then
+    # Launch postfix daemon
+    bash /etc/postfix-config.sh
+    /usr/sbin/postfix start &
+fi
 
 # Launch fetchmail daemon
 touch /var/log/fetchmail.log
