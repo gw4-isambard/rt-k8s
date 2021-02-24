@@ -8,6 +8,9 @@ LABEL maintainer="Joe Heaton <joe.heaton@bristol.ac.uk>"
 ARG TEST_IMAGE
 ENV TEST_IMAGE=$TEST_IMAGE
 
+ENV RT_VERSION 4.4.4
+ENV RT_SHA 34c316a4a78d7ee9b95d4391530f9bb3ff3edd99ebbebfac6354ed173e940884
+
 RUN yum -y update \
   && yum clean all \
   && yum -y install epel-release \
