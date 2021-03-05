@@ -136,6 +136,12 @@ Setup LetsEncrypyt
 
     helm install stable/kube-lego --namespace $NS --set config.LEGO_EMAIL=isambard-support,config.LEGO_URL=https://acme-v01.api.letsencrypt.org/directory,rbac.create=true
 
+    kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.2.0/cert-manager.yaml
+    kubectl get pods --namespace cert-manager
+
+Following these instructions to add cert-manager to kubectl: https://cert-manager.io/docs/usage/kubectl-plugin/
+
+
 To modify and redeploy the RT container, delete and recreate the deployment:
 
     kubectl delete deployment --namespace=$NS rt-deploy
