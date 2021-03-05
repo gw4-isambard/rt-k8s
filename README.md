@@ -39,8 +39,8 @@ Log in to the created VM
 ```bash
 sudo apt update
 sudo apt upgrade
-sudo snap install --classic microk8s
-microk8s enable ingress storage
+sudo snap install --classic microk8s helm
+microk8s enable ingress storage dns helm3
 ```
 
 Check for the 10G data disk using `lsblk`, then format it using `mkfs.ext4 /dev/sda` and mount to `/data/` by running `mkdir /data; mount /dev/sda /data`.
