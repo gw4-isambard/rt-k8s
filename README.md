@@ -30,6 +30,8 @@ az vm create --name rt-test \
     --size Standard_D2s_v3 \
     --admin-username gw4admin \
     --ssh-key-values sshkey.pub
+az vm open-port --resource-group ${RG} --name rt-test --port 80 --priority 900
+az vm open-port --resource-group ${RG} --name rt-test --port 443 --priority 901
 ```
 
 Log in to the created VM
