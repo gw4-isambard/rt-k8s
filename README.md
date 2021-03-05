@@ -107,8 +107,9 @@ Start the service:
     kubectl create --namespace=$NS -f rt-svc.yaml
     kubectl apply --namespace=$NS -f rt-ingress.yaml
 
-Create the PVC:
+Create the PV & PVC:
 
+    kubectl create  --namespace=$NS -f rt-pv.yaml
     kubectl create  --namespace=$NS -f rt-pvc.yaml
 
 Create Kubernetes secrets:
